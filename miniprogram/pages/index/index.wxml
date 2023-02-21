@@ -1,0 +1,40 @@
+<scroll-view class="scroll-wrap" scroll-y enable-passive scroll-with-animation type="custom">
+  <view class="baneer">
+    <swiper indicator-active-color="#fff"	indicator-color="#000" indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannerList}}" wx:key="index">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image class="image" mode="widthFix" src="{{item.image}}" 	lazy-load alt="{{item.title}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+    </swiper>
+</view>
+<notice-bar  class="defeine-style">
+  <view slot="text" class="notice-slot">
+    <image class="notice-icon"  src="/data/svg/notice.svg"></image>
+    <text >这里是插入到组件slot name="before"中的内容</text>
+  </view>
+</notice-bar>
+<view class="card-wrap ">
+  <view class="card-wrap-item" wx:for="{{CardSet}}" wx:key="index" style="background-color:{{ item.bgColor }}">
+   <view class="card-wrap-item-title">
+     <text style="color: {{item.fontColr}}; font-size: 30rpx;">{{item.title}}</text>
+     <text style="color: {{item.fontColr}}; font-size: 24rpx;">{{item.desc}}</text>
+   </view>
+   <view class="card-wrap-item-button">
+    <button  type="primary" size="mini" style="color: {{item.fontColr}}; font-size: 26rpx; ">{{item.buttonText}}</button>
+   </view>
+  </view>
+</view>
+ <text class="grid-title">快捷入口</text>
+ <view class="grid-wrap">
+ <view data-key="{{item.key}}" bindtap="jump" class="grid-item" wx:for="{{QuickEntrance}}" wx:key="index">
+   <image class="grid-image" src="{{item.icon}}" ></image>
+   <text class="grid-text">{{item.text}}</text>
+ </view> 
+ </view>
+</scroll-view>
+
+ 

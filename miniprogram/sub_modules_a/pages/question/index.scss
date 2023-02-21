@@ -1,0 +1,53 @@
+/* pages/question/index.wxss */
+.demo-section__content {
+	margin-top: 32rpx;
+	margin-bottom: 48rpx;
+}
+.content {
+	margin: 0 24rpx;
+	display: flex;
+	flex-direction: column;
+	.skeleton--t-skeleton__row {
+		margin-bottom: 6px;
+	}
+	.t-skeleton__content {
+		margin-bottom: 30rpx;
+	}
+}
+.content-item {
+	display: flex;
+	flex-direction: column;
+	padding: 30rpx 0;
+	border-bottom: 1px solid #999;
+	gap: 30rpx;
+}
+.content-title {
+	display: flex;
+	align-items: center;
+	title {
+		flex: 1;
+		font-size: 36rpx;
+		color: #333;
+		font-weight: 800;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.t-class {
+		background-color: rgb(28, 221, 54);
+	}
+}
+.content-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 24rpx;
+	color: #aaa;
+	white-space: nowrap;
+}
+.content-detail,
+.content-date {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

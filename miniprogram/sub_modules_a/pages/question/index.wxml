@@ -1,0 +1,35 @@
+<!--pages/question/index.wxml-->
+<wxs src="../../../utils/tool.wxs" module="filter" />
+<scroll-get-data 
+    tigger="{{tigger}}" 
+    is-over="{{isOver}}" 
+    bind:get="getCb" 
+    bind:pullDown="onPullDown" 
+    bind:updateFreshing="updateFreshing" 
+  >
+  <view slot="content" class="content">
+    <block wx:if="{{firstLoaded && pagenation.total == 0}}">
+      <t-empty icon="info-circle-filled" description="描述文字" />
+    </block>
+    <block wx:elif="{{!firstLoaded}}">
+      <block wx:for="{{[1, 2, 3, 4, 5, 6]}}"wx:key="index" class="demo-section__content">
+        <t-skeleton theme="text" loading></t-skeleton>
+      </block>
+    </block>
+    <block wx:else>
+      <view bindtap="jump"  data-id="{{item.exerciseKey}}" class="content-item" wx:for="{{articleSet}}" wx:key="index">
+        <view class="content-title">
+          <title>{{item.title}}</title>
+          <t-tag theme="primary" class="t-class" variant="light" shape="round">{{filter.typeToName(item.category)}}</t-tag>
+        </view>
+        <view class="content-info">
+          <view class="content-detail">
+            <title style="margin-right: 10rpx;">难度</title>
+            <t-rate allow-half size="18px" value="{{item.level}}" variant="filled" />
+          </view>
+          <title class="content-date">更新时间: {{filter.getDate(item.updateAt)}}</title>
+        </view>
+        </view>
+    </block>
+  </view>
+</scroll-get-data>

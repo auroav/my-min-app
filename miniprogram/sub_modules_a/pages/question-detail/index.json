@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "t-rate": "tdesign-miniprogram/rate/rate",
+    "t-loading": "tdesign-miniprogram/loading/loading",
+    "towxml": "../../../towxml/towxml",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+    "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group"
+  },
+  "componentPlaceholder": {
+    "towxml": "view"
+  }
+}

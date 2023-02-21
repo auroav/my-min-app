@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "scroll-get-data": "/components/scroll-get-data",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-rate": "tdesign-miniprogram/rate/rate",
+    "t-skeleton": "tdesign-miniprogram/skeleton/skeleton",
+    "t-empty": "tdesign-miniprogram/empty/empty"
+  }
+}

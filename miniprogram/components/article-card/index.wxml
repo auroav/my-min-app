@@ -1,0 +1,6 @@
+ <view class="{{noBorder ? 'card-wrap' : 'card-wrap border-bottom'}}">
+   <image class="image" src="{{item.banner}}" mode="aspectFill" />
+   <text class="card-title">{{item.title}}</text>
+   <text class="card-digest">{{item.digest}}</text>
+   <text class="card-date">{{item.updateAt}}</text>
+ </view>

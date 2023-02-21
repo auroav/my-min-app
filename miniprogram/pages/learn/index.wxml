@@ -1,0 +1,56 @@
+<wxs module="refresh">
+
+module.exports = {
+  onPulling: function(evt, instance) {
+    var p = Math.min(evt.detail.dy / 80, 1)
+    var view = instance.selectComponent('.refresh-container')
+    view.setStyle({
+      opacity: p,
+      color: '#eee',
+      transform: "scale(" + p + ")"
+    })
+  }
+}
+
+</wxs>
+<t-tabs value="{{tabIdx}}" bind:change="onTabsChange" t-class="custom-tabs">
+  <t-tab-panel label="面经" value="1" />
+  <t-tab-panel label="技术文章" value="2" />
+</t-tabs>
+ <scroll-view 
+  class="scroll-wrap scroll-view" 
+  scroll-y 
+  scroll-with-animation 
+  type="custom"
+  enable-back-to-top
+  refresher-enabled="{{true}}"
+  refresher-threshold="{{80}}"
+  refresher-default-style="none"
+  refresher-background="#f00"
+  bindrefresherpulling="{{refresh.onPulling}}"
+  refresher-background="none"
+  refresher-triggered="{{tigger}}"
+  bindrefresherrefresh="onRefresh"
+  bindrefresherrestore="onRestore"
+  bindrefresherabort="onAbort"
+>
+<view slot="refresher" class="refresh-container"
+    style="display: block; width: 100%; height: 80px; background: #a1cfe7; display: flex; align-items: center;"
+  >
+    <view class="view1" style="position: absolute; text-align: center; width: 100%;">
+      下拉刷新
+    </view>
+  </view>
+    <view wx:for="{{articleSet}}" wx:key="index" data-url="{{item.url}}" bindtap="jump">
+      <d-article-card no-border="{{index == articleSet.length - 1}}" class="no-border" item="{{item}}"></d-article-card>
+    </view>
+    <view wx:if="{{firstLoad && pagenation.total == 0}}">
+      <t-empty icon="info-circle-filled" description="空数据" />
+    </view>
+    <view wx:else class="scroll-loadding">
+      <t-loading  wx:if="{{!isOver}}" theme="dots" size="80rpx" class="wrapper" />
+      <view wx:else class="flex-center over ">
+        已经到底啦
+      </view>
+    </view>
+ </scroll-view>

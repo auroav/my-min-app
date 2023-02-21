@@ -1,0 +1,14 @@
+/* pages/learn/index.wxss */
+.scroll-wrap {
+	height: calc(100vh - 192rpx);
+}
+.scroll-loadding {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.over {
+	height: 60rpx;
+	font-size: var(--fontSize-12);
+}

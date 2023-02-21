@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "d-avatar": "/components/avatar"
+  }
+}

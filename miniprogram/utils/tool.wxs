@@ -1,0 +1,18 @@
+var typeMap = {
+  QA: "问答题",
+  Choice: "选择题"
+}
+module.exports = {
+  typeToName: function (type) {
+    return typeMap[type];
+  },
+  getDate: function (date) {
+    if (!date) {
+      return ''
+    }
+    var dateArr = date.split('-').map(function (x, ix) {
+      return ix == 0 ? x : x.substring(0, 2)
+    });
+    return dateArr.join('/');
+  }
+}

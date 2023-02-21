@@ -1,0 +1,12 @@
+{
+  "name": "answer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "tdesign-miniprogram": "^1.0.0-rc.3"
+  }
+}

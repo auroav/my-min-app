@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "notice-bar": "/components/notice-bar"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "首页",
+  "backgroundColor": "#eee",
+  "backgroundTextStyle": "light"
+}

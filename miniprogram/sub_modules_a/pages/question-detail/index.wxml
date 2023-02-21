@@ -1,0 +1,70 @@
+<!--pages/question-detail/index.wxml-->
+<wxs src="../../../utils/tool.wxs" module="filter" />
+<view class="detail-nav">
+  <view  data-id="{{item.prev}}" data-type="ins" bindtap="jump">
+    {{ item.prev ? "上一题" : "" }}
+  </view>
+  <view class="detail-count">第{{page}}题</view>
+  <view data-id="{{item.next}}" bindtap="jump" data-type="des">
+    {{ item.prev ? "下一题" : "" }}
+  </view>
+</view>
+<scroll-view 
+  scroll-y 
+  scroll-with-animation 
+  type="custom"
+  enable-back-to-top
+  class="scroll-info"
+>
+<t-loading  wx:if="{{loading}}" theme="dots" size="80rpx" class="wrapper" />
+<block wx:else>
+<view class="scroll-wrap">
+  <view class="scroll-info">
+    <view class="scroll-title">
+      <text>题目：</text>
+      <text>{{item.title}}</text>
+    </view>
+  <block wx:if="{{item.desc}}">
+    <towxml nodes="{{item.desc}}"/>
+  </block>
+  <view class="content-info">
+    <view class="content-detail flex-center ">
+      <text>难度：</text>
+      <t-rate allow-half size="18px" value="{{item.level}}" variant="filled" />
+    </view>
+    <title class="content-date flex-center ">更新时间: {{filter.getDate(item.updateAt)}}</title>
+  </view>
+</view>
+<block wx:if="{{item.category == 'Choice'}}">
+  <text >
+    选项({{ item.options.isMulti ? "多选" : "单选" }})：
+  </text>
+  <block wx:if="{{!item.options.isMulti}}">
+    <t-radio-group bind:change="onRadioChange" data-answer="{{item.options.answer}}">
+        <block wx:for="{{item.options.options}}" wx:key="index">
+            <t-radio value="{{index}}" label="{{item}}" />
+        </block>
+    </t-radio-group>
+  </block>
+  <block wx:else>
+    <t-checkbox-group bind:change="handleGroupChange" data-answer="{{item.options.answer}}">
+      <block wx:for="{{item.options.options}}" wx:key="index">
+            <t-checkbox value="{{index}}" label="{{item}}" />
+        </block>
+    </t-checkbox-group>
+  </block>
+</block>
+<view style="flex: 1;">
+  <towxml nodes="{{show ? article : null}}"/>
+</view>
+</view>
+</block>
+</scroll-view>
+<view class="scroll-tool">
+  <t-button bindtap="collectFn" data-id="{{item.exerciseKey}}"  theme="light" block size="large" t-class="{{['button-class']}}">
+    <text>加入收藏</text> 
+    <t-icon name="heart" size="48rpx" data-name="heart"/>
+  </t-button>
+  <t-button  t-class="{{['button-class']}}"  bindtap="setShow" theme="primary" block size="large">查看答案</t-button>
+</view>
+

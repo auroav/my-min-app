@@ -1,0 +1,49 @@
+/* pages/question-detail/index.wxss */
+.scroll-info {
+	height: calc(100vh - 192rpx);
+}
+.detail-nav {
+	display: flex;
+	align-items: center;
+	height: 96rpx;
+	justify-content: space-between;
+	padding: 0 30rpx;
+	border-bottom: 1px solid #999;
+	.detail-count {
+		font-size: 34rpx;
+		font-weight: 600;
+	}
+}
+.conent-hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+.scroll-wrap {
+	display: flex;
+	flex-direction: column;
+	padding: 30rpx;
+	.scroll-info {
+		flex: 0;
+	}
+	.content-info {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.scroll-tool {
+	height: 96rpx;
+	display: flex;
+	align-items: center;
+	.button-class {
+		border: none;
+		border-radius: 0 !important;
+	}
+	.button-class {
+		.t-button__content {
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+			gap: 10rpx;
+		}
+	}
+}

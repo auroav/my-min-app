@@ -1,0 +1,29 @@
+<view class="user-wrap">
+<view class="user-avatar">
+  <d-avatar 
+    userInfo="{{userInfo}}" 
+    canIUseGetUserProfile="{{canIUseGetUserProfile}}" 
+    hasUserInfo="{{hasUserInfo}}"
+    bind:user="getUserProfile"
+    d-class="wrap"
+  >
+  </d-avatar>
+</view>
+<t-cell-group theme="card">
+  <t-cell title="我的收藏" leftIcon="star" hover arrow data-key="collect" bindtap="jump" />
+  <t-cell  leftIcon="help-circle" data-key="cb" hover arrow  >
+    <button class="no-style" slot="title" open-type="contact" bindcontact="bindcontact">问题反馈</button>
+  </t-cell>
+  <t-cell title="分享小程序" leftIcon="share" data-key="share" hover arrow  bindtap="jump" />
+  <t-cell title="我的地址" leftIcon="folder" data-key="address" hover arrow  bindtap="jump" />
+</t-cell-group>
+<view class="blank"> </view>
+
+<t-cell-group theme="card">
+  <t-cell title="关于我们" leftIcon="filter" data-key="about" hover arrow  bindtap="jump" />
+  <t-cell  leftIcon="call" data-key="call" hover arrow   >
+    <button class="no-style" slot="title"  open-type="getPhoneNumber"bindgetphonenumber="getPhoneNumber">联系我们</button>
+  </t-cell>
+  <t-cell title="赞助支持" leftIcon="flag" data-key="flag" hover arrow  bindtap="jump" />
+</t-cell-group>
+</view>

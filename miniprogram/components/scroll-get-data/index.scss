@@ -1,0 +1,16 @@
+/* components/scroll-get-data/index.wxss */
+.scroll-wrap {
+	height: calc(100vh - 96rpx);
+}
+.scroll-loadding {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	height: 100rpx;
+	align-items: center;
+}
+
+.over {
+	height: 60rpx;
+	font-size: var(--fontSize-12);
+}

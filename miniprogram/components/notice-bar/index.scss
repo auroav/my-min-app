@@ -1,0 +1,22 @@
+/* components/tips/index.wxss */
+.bar-wrap {
+	width: 100%;
+	height: 74rpx;
+	background-color: var(--noticeColor);
+	padding-left: 10rpx;
+	.bar-wrap-text {
+		width: 100%;
+		height: 74rpx;
+		display: flex;
+		align-items: center;
+		@keyframes move {
+			from {
+				transform: translateX(0%);
+			}
+			to {
+				transform: translateX(100%);
+			}
+		}
+		// animation: 6s ease 1s infinite running move;
+	}
+}

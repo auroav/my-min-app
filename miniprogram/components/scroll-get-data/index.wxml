@@ -1,0 +1,47 @@
+<!--components/scroll-get-data/index.wxml-->
+<wxs module="refresh">
+
+module.exports = {
+  onPulling: function(evt, instance) {
+    var p = Math.min(evt.detail.dy / 80, 1)
+    var view = instance.selectComponent('.refresh-container')
+    view.setStyle({
+      opacity: p,
+      color: '#eee',
+      transform: "scale(" + p + ")"
+    })
+  }
+}
+</wxs>
+<scroll-view 
+  class="scroll-wrap scroll-view" 
+  scroll-y 
+  scroll-with-animation 
+  type="custom"
+  enable-back-to-top
+  refresher-enabled="{{true}}"
+  refresher-threshold="{{80}}"
+  refresher-default-style="none"
+  refresher-background="#f00"
+  bindrefresherpulling="{{refresh.onPulling}}"
+  refresher-background="none"
+  refresher-triggered="{{tigger}}"
+  bindrefresherrefresh="onRefresh"
+  bindrefresherrestore="onRestore"
+  bindrefresherabort="onAbort"
+>
+<view slot="refresher" class="refresh-container"
+    style="display: block; width: 100%; height: 80px; background: #a1cfe7; display: flex; align-items: center;"
+  >
+    <view class="view1" style="position: absolute; text-align: center; width: 100%;">
+      下拉刷新
+    </view>
+  </view>
+    <slot name="content"></slot>
+    <view class="scroll-loadding">
+      <t-loading  wx:if="{{!isOver}}" theme="dots" size="80rpx" class="wrapper" />
+      <view wx:else class="flex-center over ">
+      已经到底啦
+    </view>
+    </view>
+ </scroll-view>

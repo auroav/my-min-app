@@ -1,0 +1,5 @@
+ <view class="bar-wrap defeine-style"  >
+   <view class="bar-wrap-text ">
+    <slot name="text"></slot>
+   </view>
+ </view>

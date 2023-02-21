@@ -1,0 +1,36 @@
+/* pages/user/index.wxss */
+.user-wrap {
+	background-color: #eee;
+	height: calc(100vh - 96rpx);
+}
+.user-avatar {
+	display: flex;
+	justify-content: center;
+	background-color: #fff;
+}
+.blank {
+	height: 40rpx;
+	width: 100%;
+}
+.wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.no-style {
+	border: none;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #333;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	text-align: left;
+	font-size: 32rpx;
+}
+.no-style::after {
+	border: none;
+}
